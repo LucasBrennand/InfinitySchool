@@ -285,3 +285,56 @@ B = {5, 6, 7, 8}
 
 for i in A.union(B):
     print(i)
+
+#Atividade 8
+print("")
+print("Atividade 8")
+
+dic = {
+    "nome" : "Lucas",
+    "idade": 22
+}
+
+print(dic.get("idade"))
+
+#Atividade 9
+print("")
+print("Atividade 9")
+
+dicionario = {
+    "nome" : "Lucas",
+    "idade": 22
+}
+
+print(dic.get("nome"))
+print(dic.get("idade"))
+
+#Atividade 10
+print("")
+print("Atividade 10")
+
+dicionario = {
+    "nome" : "Miguel",
+    "idade": 52
+}
+
+dicionario["nome"] = "Jaum"
+print(dicionario.get("nome"))
+print(dicionario.get("idade"))
+
+#Atividade 11
+print("")
+print("Atividade 11")
+
+dicionario1 = {
+    "nome" : "Rui",
+    "idade": 52,
+    "altura": 1.85
+}
+
+
+if "nome" and "idade" and "altura" in dicionario1:
+    print(True)
+else:
+    print(False)
+
