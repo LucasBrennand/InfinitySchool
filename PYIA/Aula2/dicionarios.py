@@ -338,3 +338,96 @@ if "nome" and "idade" and "altura" in dicionario1:
 else:
     print(False)
 
+
+#Atividade 12
+print("")
+print("Atividade 12")
+
+
+pontosA = 0
+pontosB = 0
+eleitos = {
+    "Eleito A": pontosA,
+    "Eleito B": pontosB
+}
+
+while(True):
+    userInput = int(input(f"O que você gostaria de fazer? \n1. Votar \n2. Exibir Resultado \n3. Sair \n => "))
+
+    if (userInput == 1):
+        voto = int(input("Digite seu voto: 1 ou 2 => "))
+        if (voto == 1):
+            pontosA+=1
+            print("Um voto para o eleito A")
+        elif (voto == 2):
+            pontosB+=1
+            print("Um voto para o eleito B")
+        else:
+            print("Voto inválido")
+    elif (userInput == 2):
+        eleitos["Eleito A"] = pontosA
+        eleitos["Eleito B"] = pontosB
+        print(f"Eleito A pontos: {eleitos['Eleito A']} \n Eleito B pontos: {eleitos['Eleito B']} \n")
+    elif (userInput == 3):
+        print("Saindo..")
+        break
+    else:
+        print("Input inválido")
+
+#Atividade 13
+print("")
+print("Atividade 13")
+
+notas = {
+    "Aluno A": 7.5,
+    "Aluno B": 5,
+    "Aluno C": 6.75
+}
+
+media = (notas["Aluno A"] + notas["Aluno B"] + notas["Aluno C"]) / len(notas)
+
+print(media)
+
+#Atividade 14
+print("")
+print("Atividade 14")
+
+lista = [1, 33, 53, 12, 33, 12]
+lista_sem_duplicata = list(set(lista))
+print(lista_sem_duplicata)
+
+
+#Atividade 15
+print("")
+print("Atividade 15")
+
+conjunto1 = {1, 2, 3}
+conjunto2 = {4, 5, 6}
+conjunto3 = {7, 8, 9}
+
+conjunto_juntos = conjunto1.union(conjunto2, conjunto3)
+print(conjunto_juntos)
+
+#Desafio
+print("")
+print("Desafio")
+
+nomeInput = input("Digite o nome do aluno: ")
+idadeInput = input("Digite a idade do aluno: ")
+nota1Input = float(input("Digite a primeira nota do aluno: "))
+nota2Input = float(input("Digite a segunda nota do aluno: "))
+nota3Input = float(input("Digite a terceira nota do aluno: "))
+notas = (nota1Input, nota2Input, nota3Input)
+
+aluno = {
+    "nome" : nomeInput,
+    "idade" : idadeInput,
+    "notas" : notas
+}
+print(aluno)
+
+cont = 0
+for i in notas:
+    cont = cont + i
+    aluno["notas"]
+
