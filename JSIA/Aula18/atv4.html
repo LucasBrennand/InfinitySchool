@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Raças de Cães</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Raças de Cães</h1>
+  <div id="tabelas"></div>
+
+  <script>
+    // Função para formatar nomes (opcional)
+    function formatarNome(texto) {
+      return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
+
+    // Função para criar uma tabela por grupo de raça
+    function criarTabelaPorGrupo(grupo, racas) {
+      let html = `<h2>Grupo: ${grupo || 'Desconhecido'}</h2>`;
+      html += `<table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Origem</th>
+            <th>Expectativa de Vida</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+      racas.forEach(raca => {
+        html += `<tr>
+          <td>${raca.attributes.name}</td>
+          <td>${raca.attributes.origin || 'Não informada'}</td>
+          <td>${raca.attributes.life.span || 'N/A'}</td>
+        </tr>`;
+      });
+
+      html += `</tbody></table>`;
+      return html;
+    }
+
+    // Fazendo a requisição
+    fetch("https://dogapi.dog/api/v2/breeds")
+      .then(res => {
+        if (!res.ok) throw new Error("Erro ao buscar raças");
+        return res.json();
+      })
+      .then(data => {
+        console.log("Raças recebidas:", data);
+
+        const racas = data.data;
+
+        // Agrupando por grupo
+        const grupos = {};
+        racas.forEach(raca => {
+          const grupo = raca.attributes.breed_group || 'Sem grupo';
+          if (!grupos[grupo]) grupos[grupo] = [];
+          grupos[grupo].push(raca);
+        });
+
+        // Exibindo as tabelas
+        const divTabelas = document.getElementById("tabelas");
+        for (const grupo in grupos) {
+          divTabelas.innerHTML += criarTabelaPorGrupo(grupo, grupos[grupo]);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("tabelas").innerText = "Erro ao carregar as raças.";
+      });
+  </script>
+
+</body>
+</html>
