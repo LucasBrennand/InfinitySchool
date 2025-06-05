@@ -29,15 +29,72 @@ calcularArea(largura, comprimento)
 #Atividade 3
 print("")
 print("Atividade 3")
+
+def concatenarString(*args):
+    resultado = ""
+    for i in args:
+        resultado += i
+    return resultado
+
+print(concatenarString("Ola", "Mundo", "!"))
+
+
 #Atividade 4
 print("")
 print("Atividade 4")
+
+def dobrarValor(valor):
+    return valor * 2
+
+def dobrarNumeros(*args):
+    dobrado = list(map(dobrarValor, args))
+    return dobrado
+
+print(dobrarNumeros(1, 2, 3, 4, 5))
+
+
 #Atividade 5
 print("")
 print("Atividade 5")
+
+def filtrar(valor):
+    if (valor % 2 == 0):
+        return valor
+    
+def filtrarNumeros(*args):
+    filtrado = list(filter(filtrar, args))
+    return filtrado
+
+print(filtrarNumeros(1, 2, 3, 4, 5, 6, 7, 8))
+
 #Atividade 6
 print("")
 print("Atividade 6")
+
+from functools import reduce
+
+def reduzir(valor1, valor2):
+    if len(valor1) > len(valor2):
+        return valor1
+    else:
+        return valor2
+
+def reduzirNumeros(*args):
+    reduzido = reduce(reduzir, args)
+    return reduzido
+
+print(reduzirNumeros("Miguel", "Lucas", "João", "Mia", "Jonathan"))
+
 #Atividade 7
 print("")
 print("Atividade 7")
+
+def criar_lista_de_compras(*args):
+    lista = args
+    print(lista)
+
+criar_lista_de_compras("Roupa","Carne","Frutas","Verduras")
+
+#Atividade 8
+print("")
+print("Atividade 8")
