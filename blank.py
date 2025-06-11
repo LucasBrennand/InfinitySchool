@@ -1,12 +1,6 @@
-#Atividade 8
+#Desafio
 print("")
-print("Atividade 8")
+print("Desafio")
 
-soma = lambda a,b : a + b
-sub = lambda a,b : a - b
-mult = lambda a,b : a * b
-div = lambda a,b : a / b
-print(soma(5, 2))
-print(sub(7, 6))
-print(mult(3, 5))
-print(div(9, 3))
+def processador_texto(*args):
+    print(f"Tamanho: {len(args)}")
