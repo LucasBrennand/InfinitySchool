@@ -20,9 +20,12 @@ while (i < 20) {
 console.log(`Array de números aleatórios: ${numeros}`);
 
 let pares = numeros.filter(number => number % 2 == 0)
+console.log(`Array de números pares: ${pares}`)
 let paresQuadrado = pares.map(number => number ** 2)
 console.log(`Array de números pares ao quadrado: ${paresQuadrado}`)
-let somaPares = paresQuadrado.map(number => {
-    soma+=number
-})
-console.log(`Array de soma dos numeros pares: ${somaPares}`)
+
+let somaPares = paresQuadrado.forEach(element => {
+    soma+=element
+});
+
+console.log(`Soma de todos os numeros pares: ${soma}`)
