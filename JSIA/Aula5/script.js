@@ -1,11 +1,11 @@
-// //Atividade 5
-// console.log("Atividade 5")
+//Atividade 5
+console.log("Atividade 5")
 
-// const n = 5
-// let i
-// while(i < 5){
-
-// }
+const n = 5
+while(i <= 5){
+    print(i)
+    i--
+}
 
 //Atividade 7
 console.log("Atividade 7")
