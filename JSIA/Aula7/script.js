@@ -40,7 +40,7 @@ const numerosReduce = [1, 3, 5, 7, 8, 9, 10, 13, 15]
 
 numerosReduzido = numerosReduce.reduce((acumulador, index) => {
     return acumulador + index
-})
+}, 0)
 console.log(numerosReduzido)
 
 
