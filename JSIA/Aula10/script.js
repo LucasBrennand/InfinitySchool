@@ -28,18 +28,22 @@ const botaoAdd = document.getElementById("adicionarParagrafo")
 const botaoRemove = document.getElementById("removerParagrafo")
 
 let arrayP = []
+let novoP = ""
 botaoAdd.addEventListener("click", ()=>{
-    let novoP = document.createElement("p")
-    novoP.innerHTML = "lorem25"
+    novoP = document.createElement("p")
+    novoP.innerHTML = 
+    `
+    <p class="lorem">lorem24</p>
+    `
     container.appendChild(novoP)
     console.log(novoP)
+
 
     
 })
 
 botaoRemove.addEventListener("click", ()=>{
-    const p = document.getElementsByTagName("p")
-    if(container.lastChild.contains("<p>")){
-        container.removeChild(container.lastChild)
-    }
+    container.removeChild(novoP)
+    
 })
+
