@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <label for="nome">Digite seu nome</label>
-    <input type="text" name="nome" id="nome-input">
-    <input type="submit" value="Enviar" id="enviar">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="atividade1">
+      <label for="nome">Digite seu nome</label>
+      <input type="text" id="nomeInput" name="nome" />
+      <input type="submit" id="enviar" nome="enviar" value="Enviar" />
+      <button id="remover">Remover</button>
+      <button id="clear">Clear</button>
+      <ul id="lista"></ul>
+    </div>
 
-    <ul id="para"></ul>
+    <div class="atividade2">
+        <form action="">
+            <label for="tema">Selecione um tema</label>
+            <select name="tema" id="temaSelect">
+                <option value="Claro">Claro</option>
+                <option value="Escuro">Escuro</option>
+            </select>
+
+            <fieldset>
+                <legend>Escolha uma fonte</legend>
+                <label for="Pequeno">Pequeno</label>
+                <input type="radio" name="fonte" value="pequeno" id="pequenoRadio">
+
+                <label for="Medio">Medio</label>
+                <input type="radio" name="fonte" value="medio" id="medioRadio">
+
+                <label for="Grande">Grande</label>
+                <input type="radio" name="fonte" value="grande" id="grandeRadio">
+            </fieldset>
+
+            <input type="submit" value="Salvar" id="formBtn">
+        </form>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
