@@ -9,6 +9,7 @@ const remove = document.querySelector("#remover")
 const clear = document.querySelector("#clear")
 const temaSelect = document.querySelector("#temaSelect")
 const formBtn = document.querySelector("#formBtn")
+const fontRadios = document.querySelectorAll(`input[name="fonte"]`)
 
 let local = JSON.parse(localStorage.getItem("Nome")) || []
 for(let i of local){
@@ -22,8 +23,18 @@ let preferenciasLocal = JSON.parse(localStorage.getItem("Preferencias")) || []
 console.log(preferenciasLocal)
 
 let preferencias = {
-    tema: "",
-    fonte: ""
+    tema: preferenciasLocal.tema || "",
+    fonte: preferenciasLocal.fonte || ""
+}
+temaSelect.value = preferencias.tema
+
+if (preferencias.fonte) {
+  const selectedRadio = document.querySelector(
+    `input[name="fonte"][value="${preferencias.fonte}"]`
+  );
+  if (selectedRadio) {
+    selectedRadio.checked = true;
+  }
 }
 
 enviar.addEventListener("click", (event) => {
