@@ -121,7 +121,7 @@ body {
 }
 
 .tarefas-item {
-  background-color: var(--color-muted);
+  border: 2px solid var(--color-muted);
   margin: 20px;
   display: flex;
   flex-direction: row;

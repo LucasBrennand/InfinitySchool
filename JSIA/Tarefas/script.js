@@ -2,10 +2,12 @@ const username = document.getElementById("username");
 const tarefasBtn = document.getElementById("tarefas-btn");
 const tarefasInput = document.getElementById("tarefas-input");
 const tarefasList = document.getElementById("tarefas-list");
+const tarefaContador = document.querySelector("#tarefa-contador")
 
 // let namePrompt = prompt("Digite seu nome:")
 // username.textContent = namePrompt;
-
+const getTarefas = JSON.parse(localStorage.getItem("Tarefas"))
+let tarefasArray = []
 tarefasBtn.addEventListener("click", (event) => {
   if (tarefasInput.value !== "") {
     let tarefasInputValue = tarefasInput.value;
@@ -17,7 +19,9 @@ tarefasBtn.addEventListener("click", (event) => {
                                 <button id="tarefas-removerBtn">Remover</button>
                             
     `;
-
+    tarefasArray.push(novoItem)
+    localStorage.setItem("Tarefas", JSON.stringify(tarefasArray))
+    console.log(tarefasArray)
     tarefasInput.value = "";
     event.preventDefault();
   }
