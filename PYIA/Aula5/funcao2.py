@@ -111,3 +111,18 @@ print(div(9, 3))
 #Desafio
 print("")
 print("Desafio")
+
+def processador_texto(texto, **kwargs):
+    for i in kwargs.items():
+        if (i == "contar_palvras")
+
+
+def contar_palavras():
+
+def contar_letras():
+
+def inverter_texto():
+
+def substituir_palavra():
+
+processador_texto(contar_palavras, {contar_palavras contar_palavras()})
