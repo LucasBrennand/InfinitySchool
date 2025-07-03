@@ -1,3 +1,7 @@
+# python -m venv myenv
+# cd ./
+# source myenv/Scripts/activate
+
 tarefas = []
 def adicionar_tarefa():
     nome_tarefa = input("Digite uma nova tarefa: ")
