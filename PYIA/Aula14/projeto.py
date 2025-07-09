@@ -31,10 +31,11 @@ class Reserva:
 
 class GerenciadorDeReserva:
     def __init__(self):
-        pass
+        self.quartos = []
 
-    def criar_reserva(self):
-        return
+    def criar_reserva(self, cliente, quarto):
+        if quarto["status"] == "Disponivel":
+            self.quartos.append(quarto)
     
     def modificar_reserva(self):
         return
@@ -51,3 +52,4 @@ class GerenciadorDeReserva:
 class Main:
     cliente1 = Cliente("Lucas", "81995697350", "lucas12234567@gmail.com", 717)
     quarto1 = Quarto("101", "Deluxe", 300.00, "Disponivel")
+    print(quarto1)
