@@ -1,4 +1,3 @@
-from projeto import *
 import mysql.connector
 
 class Create:
@@ -26,8 +25,8 @@ class Create:
                     parametros.append(parametro_name)
                 case 2:
                     parametros_join = ', '.join(parametros)
-                    mycursor = execute(f"CREATE TABLE {table_name} ({parametros_join})")
-                    mydb.commit()
+                    self.mycursor.execute(f"CREATE TABLE {table_name} ({parametros_join})")
+                    self.mydb.commit()
                     print(f"Tabela '{table_name}' criada com sucesso!")
                     op = 0
                 case 0:
