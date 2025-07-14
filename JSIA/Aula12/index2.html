@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nome">Digite seu nome</label>
+    <input type="text" name="nome" id="nome">
+    <button type="submit" id="enviar">Enviar</button>
+</body>
+</html>
+
+<script>
+    const nome = document.querySelector("#nome")
+    const enviar = document.querySelector("#enviar")
+
+    enviar.addEventListener("click", (event) => {
+        event.preventDefault()
+        let p = document.createElement("p")
+        document.body.appendChild(p)
+        p.textContent = nome.value
+        localStorage.setItem("nome", p.textContent)
+    })
+
+    const antigoNome = localStorage.getItem("nome")
+    let p = document.createElement("p")
+    document.body.appendChild(p)
+    p.textContent = antigoNome
+</script>
