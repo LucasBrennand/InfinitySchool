@@ -70,7 +70,7 @@ body {
   justify-content: center;
   margin-top: 40px;
   background-color: var(--color-background);
-  width: 50%;
+  width: 70%;
   padding: 30px;
   box-shadow: -1px 0px 5px 2px #353735;
 }
@@ -103,13 +103,17 @@ body {
   border: 1px solid black;
 }
 
-#tarefas-btn {
+.tarefas-btn {
   background-color: var(--color-accent);
   height: 40px;
   width: 10%;
   border-radius: 4px;
   color: var(--color-surface);
   font-weight: bold;
+}
+
+.remover{
+  background-color: #10b981;
 }
 #tarefas-btn:hover {
   cursor: pointer;
