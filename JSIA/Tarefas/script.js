@@ -5,8 +5,8 @@ const tarefasList = document.getElementById("tarefas-list");
 const tarefaContador = document.querySelector("#tarefa-contador");
 const tarefasBtnLimpar = document.querySelector("#tarefas-btn-limpar");
 
-// let namePrompt = prompt("Digite seu nome:")
-// username.textContent = namePrompt;
+let namePrompt = prompt("Digite seu nome:")
+username.textContent = namePrompt;
 const getTarefas = JSON.parse(localStorage.getItem("Tarefas")) || [];
 let tarefasArray = [];
 if (getTarefas != null) {
